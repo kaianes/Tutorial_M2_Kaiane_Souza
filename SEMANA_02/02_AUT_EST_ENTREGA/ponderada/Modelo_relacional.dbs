@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Sqlite" id="Project-911" database="Sqlite" >
+	<schema name="Default" >
+		<table name="Dados Pessoais" >
+			<column name="endereço" type="TEXT" jt="-1" />
+			<column name="telefone" type="TEXT" jt="-1" mandatory="y" />
+			<column name="email" type="TEXT" jt="-1" mandatory="y" />
+			<column name="cargo" type="TEXT" jt="-1" mandatory="y" />
+			<column name="identificador dados pessoais" type="INTEGER" jt="4" mandatory="y" />
+			<index name="pk_Dados Pessoais" unique="PRIMARY_KEY" >
+				<column name="identificador dados pessoais" />
+			</index>
+		</table>
+		<table name="Experiência" >
+			<column name="nome da empresa" type="TEXT" jt="-1" />
+			<column name="identificador experiência" type="INTEGER" jt="4" mandatory="y" />
+			<column name="identificador dados pessoais" type="INTEGER" jt="4" />
+			<index name="pk_Experiência" unique="PRIMARY_KEY" >
+				<column name="identificador experiência" />
+			</index>
+			<fk name="fk_Experiência" to_schema="Default" to_table="Dados Pessoais" >
+				<fk_column name="identificador dados pessoais" pk="identificador dados pessoais" />
+			</fk>
+		</table>
+		<table name="Formação" >
+			<column name="curso" type="TEXT" jt="-1" />
+			<column name="identificador formação" type="INTEGER" jt="4" mandatory="y" />
+			<column name="identificador dados pessoais" type="INTEGER" jt="4" />
+			<index name="pk_Formação" unique="PRIMARY_KEY" >
+				<column name="identificador formação" />
+			</index>
+			<fk name="fk_Formação" to_schema="Default" to_table="Dados Pessoais" >
+				<fk_column name="identificador dados pessoais" pk="identificador dados pessoais" />
+			</fk>
+		</table>
+		<table name="Habilidades" >
+			<column name="Illustrator" type="TEXT" jt="-1" />
+			<column name="Photoshop" type="TEXT" jt="-1" />
+			<column name="Corel Draw" type="TEXT" jt="-1" />
+			<column name="Dreamwaver" type="TEXT" jt="-1" />
+			<column name="HTML/CSS3" type="TEXT" jt="-1" />
+			<column name="Identificador Habilidades" type="INTEGER" jt="4" mandatory="y" />
+			<column name="identificador dados pessoais" type="INTEGER" jt="4" />
+			<index name="pk_Habilidades" unique="PRIMARY_KEY" >
+				<column name="Identificador Habilidades" />
+			</index>
+			<fk name="fk_Habilidades" to_schema="Default" to_table="Dados Pessoais" >
+				<fk_column name="identificador dados pessoais" pk="identificador dados pessoais" />
+			</fk>
+		</table>
+		<table name="Personalidade" >
+			<column name="Lorem Ipsum" type="TEXT" jt="-1" />
+			<column name="Identificador Personalidade" type="INTEGER" jt="4" mandatory="y" />
+			<column name="identificador dados pessoais" type="INTEGER" jt="4" />
+			<index name="pk_Personalidade" unique="PRIMARY_KEY" >
+				<column name="Identificador Personalidade" />
+			</index>
+			<fk name="fk_Personalidade" to_schema="Default" to_table="Dados Pessoais" >
+				<fk_column name="identificador dados pessoais" pk="identificador dados pessoais" />
+			</fk>
+		</table>
+		<table name="Realizações" >
+			<column name="Lorem Ipsum" type="TEXT" jt="-1" />
+			<column name="Identificador realizações" type="INTEGER" jt="4" mandatory="y" />
+			<column name="identificador dados pessoais" type="INTEGER" jt="4" />
+			<index name="pk_Realizações" unique="PRIMARY_KEY" >
+				<column name="Identificador realizações" />
+			</index>
+			<fk name="fk_Realizações" to_schema="Default" to_table="Dados Pessoais" >
+				<fk_column name="identificador dados pessoais" pk="identificador dados pessoais" />
+			</fk>
+		</table>
+	</schema>
+	<connector name="Sqlite" database="Sqlite" driver_class="org.sqlite.JDBC" driver_jar="sqlite-jdbc-3.40.0.0.jar" driver_desc="Standard" host="localhost" port="7210" instance="C:/Users/Inteli/Área de Trabalho/Tutorial_M2_Kaiane_Souza/SEMANA_02/02_AUT_EST_ENTREGA/modelofisico.db" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-24a8" show_relation="columns" >
+		<entity schema="Default" name="Dados Pessoais" color="C1D8EE" x="336" y="272" />
+		<entity schema="Default" name="Experiência" color="C1D8EE" x="48" y="496" />
+		<entity schema="Default" name="Formação" color="C1D8EE" x="96" y="48" />
+		<entity schema="Default" name="Habilidades" color="C1D8EE" x="592" y="464" />
+		<entity schema="Default" name="Personalidade" color="C1D8EE" x="560" y="112" />
+		<entity schema="Default" name="Realizações" color="C1D8EE" x="320" y="528" />
+	</layout>
+</project>
