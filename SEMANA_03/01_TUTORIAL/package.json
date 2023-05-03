@@ -1,0 +1,15 @@
+{
+  "name": "01_tutorial",
+  "version": "1.0.0",
+  "description": "Esta etapa tem por objetivo mostrar como aplicar Javascript para incluir scripts com lógica algorítmica na sua aplicação web.",
+  "main": "app_31.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
