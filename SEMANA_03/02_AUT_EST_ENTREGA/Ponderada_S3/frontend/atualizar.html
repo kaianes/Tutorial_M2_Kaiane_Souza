@@ -9,11 +9,7 @@
   <h1>Atualização de Formação</h1>
 
     <form name="form1" method="post" action="/atualizaFormacao">
-        Curso: <input type="text" id="curso" name="curso" value="">
-        <br>
-        Alma Mater: <input type="text" id="alma_mater" name="alma_mater" value="">
-        <br>
-        Periodo: <input type="integer" id="periodo" name="periodo" value="">
+        Curso: <input type="text" id="identificador_formacao" name="curso" size="50" value="">
         <br>
         <input type="hidden" id="identificador_formacao" name="identificador_formacao" value="">
         
@@ -23,20 +19,19 @@
     <script>
         let url = new URL(window.location.href);
         let params = url.searchParams;
-        url = '/Formacao?identificador_formacao='+url.searchParams.get("identificador_formacao");
+        url = '/atualizaFormacao?userId='+url.searchParams.get("identificador_formacao");
 
         fetch(url)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            let Formacao = data;
+            let usuarios = data;
 
-            Formacao.map(function(Formacao) {
-                document.getElementById('identificador_formacao').value = Formacao.identificador_formacao;
-                document.getElementById('curso').value = Formacao.curso;
-                document.getElementById('alma_mater').value = Formacao.alma_mater;
-                document.getElementById('periodo').value = Formacao.periodo;
+            usuarios.map(function(usuario) {
+                document.getElementById('identificador_formacao').value = usuario.identificador_formacao;
+                document.getElementById('curso').value = usuario.curso;
+        
             });
             alert(response.json());
         })

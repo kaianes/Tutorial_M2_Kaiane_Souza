@@ -6,7 +6,7 @@ const sqlite3 = require('sqlite3').verbose();
 const DBPATH = '../data/curriculo.db';
 
 const hostname = '127.0.0.1';
-const port = 3034;
+const port = 3000;
 const app = express();
 
 /* Colocar toda a parte estática no frontend */
@@ -36,24 +36,23 @@ app.post('/insereFormacao', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	sql = "INSERT INTO Formacao (curso, alma_mater, periodo) VALUES ('" + req.body.curso + "', '" + req.body.alma_mater + "', '" + req.body.periodo + "')";
+	sql = "INSERT INTO Formacao (curso) VALUES ('" + req.body.curso + "')";
 	console.log(sql);
 	db.run(sql, [],  err => {
 		if (err) {
 		    throw err;
 		}	
 	});
-	res.write('<p>FORMACAO INSERIDA COM SUCESSO!</p><a href="/">VOLTAR</a>');
+	res.write('<p>FORMACAO INSERIDO COM SUCESSO!</p><a href="/">VOLTAR</a>');
 	db.close(); // Fecha o banco
 	res.end();
 });
-
 
 // Monta o formulário para o update (é o U do CRUD - Update)
 app.get('/atualizaFormacao', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "SELECT * FROM Formacao WHERE identificador_formacao ="+ req.query.identificador_formacao;
+	sql = "SELECT * FROM Formacao WHERE identificador_formacao="+ req.query.identificador_formacao;
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.all(sql, [],  (err, rows ) => {
@@ -69,7 +68,7 @@ app.get('/atualizaFormacao', (req, res) => {
 app.post('/atualizaFormacao', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "UPDATE Formacao SET curso='" + req.body.curso + "', alma_mater = '" + req.body.alma_mater + "', periodo = '" + req.body.periodo + "' WHERE identificador_formacao='" + req.body.identificador_formacao + "'";
+	sql = "UPDATE Formacao SET curso='" + req.body.curso + "' WHERE identificador_formacao='" + req.body.identificador_formacao + "'";
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
@@ -86,7 +85,7 @@ app.post('/atualizaFormacao', urlencodedParser, (req, res) => {
 app.get('/removeFormacao', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "DELETE FROM Formacao WHERE identificador_formacao ='" + req.query.identificador_formacao + "'";
+	sql = "DELETE FROM Formacao WHERE identificador_formacao='" + req.query.identificador_formacao + "'";
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {

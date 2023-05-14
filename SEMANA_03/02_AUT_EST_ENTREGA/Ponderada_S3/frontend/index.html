@@ -19,10 +19,10 @@
       .then((data) => {
         let Formacao = data;
         let saida = '';
-        Formcao.map(function(Formacao) {
-          saida += '<strong> '+ `${Formacao.curso}` + '</strong>' + `${Formacao.alma_mater}` + '</strong>' + `${Formacao.periodo}`;
+        usuarios.map(function(Formacao) {
+          saida += '<strong> '+ `${usuario.curso}`;
           saida += ' - <a href="/atualizar.html?identificador_formacao=' + `${Formacao.identificador_formacao}` + '">EDITAR</a>';
-          saida += ' | <a href="/removeFormacao?identificador_formacao='+ `${Formacao.identificador_formacao}`+'">REMOVER</a></br>';
+          saida += ' | <a href="/removeUsuario?identificador_formacao='+`${Formacao.identificador_formacao}`+'">REMOVER</a></br>';
         });
         document.getElementById('resultado').innerHTML = saida;
       })

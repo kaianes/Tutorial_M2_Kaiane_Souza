@@ -3,10 +3,8 @@ CREATE TABLE IF NOT EXISTS "Formacao" (
 	"curso"	TEXT,
 	"identificador_formacao"	INTEGER NOT NULL,
 	"identificador_dados_pessoais"	INTEGER,
-	"alma_mater"	TEXT,
-	"periodo"	INTEGER,
-	FOREIGN KEY("identificador_dados_pessoais") REFERENCES "Dados_Pessoais"("identificador_dados_pessoais"),
-	PRIMARY KEY("identificador_formacao" AUTOINCREMENT)
+	PRIMARY KEY("identificador_formacao"),
+	FOREIGN KEY("identificador_dados_pessoais") REFERENCES "Dados_Pessoais"("identificador_dados_pessoais")
 );
 CREATE TABLE IF NOT EXISTS "Experiencia" (
 	"nome_da_empresa"	TEXT,
@@ -49,5 +47,3 @@ CREATE UNIQUE INDEX IF NOT EXISTS "pk_Formação" ON "Formacao" (
 	"identificador_formação"
 );
 COMMIT;
-
-
