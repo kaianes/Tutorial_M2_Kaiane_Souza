@@ -9,7 +9,7 @@ body {
     max-width: 800px;
     box-shadow: 0px 0px 10px black;
     text-align: center;
-}
+    }
 
 h1{
     color: #1D3557;
@@ -19,6 +19,33 @@ h1{
 h2{
     color: #457B9D
 }
+
+.content {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    background-color: #1D3557;
+    color:#F1FAEE;
+    box-sizing: border-box;
+    padding: 10px;
+    z-index: 100;
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background-color: #E63946;
+    color: white;
+    border-radius: 50%;
+    padding: 4px;
+}
+
 
 /*aprendendop a usar id*/
 #titulo {
@@ -40,17 +67,15 @@ p{
     color: #1D3557
 }
 
-picture{
+picture {
     width: 100%;
     display: block;
     margin: auto;
     max-width: 400px;
 }
 
-content1{
-    float:right;
-}
-
-content2{
-    float:left;
+.infos {
+    display: flex;
+    gap: 13px;
+    padding: 10px;
 }

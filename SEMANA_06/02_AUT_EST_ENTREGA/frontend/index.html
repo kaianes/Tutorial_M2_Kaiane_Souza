@@ -15,45 +15,55 @@
         
     <h1>Currículo</h1>
 
-    <div>
-        <button id="btn" onclick="botao()">clique aqui</button>
-    </div>
-    <br>
+    <button onclick="togglePopup()">mostrar popup</button>
     
-   
+    <div class="content">
+        <div onclick="togglePopup()" class="close-btn"></div>
+        <h3>Popup</h3>
+
+            <popup>
+                Esse aqui é um popup feito por meio do jquery.
+            </popup>
+    </div>
+    
+        
     <picture>
         <source media="(max-width: 700px)" srcset="imagens/icone_celular.png" type="image/png">
         
         <source media="(max-width: 1000px)" srcset="imagens/icone_tablet.png" type="image/png">
         
-
+        <br>
         <img src="imagens/icone_comput.png"><br>
     </picture>
 
+    <button id="btn" onclick="botao()">clique aqui para mudar a cor do texto</button>
+
+<div class="infos">
     
+        <content1>
+            <h2 id="titulo">Dados Pessoais</h2>
+            <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
+    
+            <h2 id="titulo">Formação</h2>
+            <p  class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
+    
+            <h2 id="titulo">Experiência</h2>
+            <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
+        </content1>
+    
+        <content2>
+            <h2 id="titulo">Habilidades</h2>
+            <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
+    
+            <h2 id="titulo">Personalidade</h2>
+            <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
+    
+            <h2 id="titulo">Realizações</h2>
+            <p  class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
+    
+        </content2>
+</div>
 
-    <content1>
-        <h2 id="titulo">Dados Pessoais</h2>
-        <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
-
-        <h2 id="titulo">Formação</h2>
-        <p  class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
-
-        <h2 id="titulo">Experiência</h2>
-        <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
-    </content1>
-
-    <content2>
-        <h2 id="titulo">Habilidades</h2>
-        <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
-
-        <h2 id="titulo">Personalidade</h2>
-        <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
-
-        <h2 id="titulo">Realizações</h2>
-        <p  class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad minima iste impedit, autem vero perspiciatis placeat adipisci dolorem aperiam. Accusamus pariatur facere possimus, corporis culpa itaque libero cupiditate ut quaerat!</p>
-        
-    </content2>
 </body>
 
 </html>
